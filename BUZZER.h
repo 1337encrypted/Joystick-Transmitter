@@ -33,6 +33,7 @@ buzzer::buzzer(uint8_t buzzpin)
 void buzzer::begin()
 {
   pinMode(buzzPin, OUTPUT);
+  off();
 }
 
 void buzzer::off()
