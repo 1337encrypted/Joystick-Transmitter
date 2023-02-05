@@ -16,7 +16,7 @@ public:
   //Function prototype
   inline pushButton(uint8_t) __attribute__((always_inline));
   inline void begin() __attribute__((always_inline));
-  inline bool readState() __attribute__((always_inline));
+  inline bool read() __attribute__((always_inline));
   inline ~pushButton() __attribute__((always_inline));
 };
 
@@ -34,7 +34,7 @@ void pushButton::begin()
   pinMode(pushPin, INPUT_PULLUP);
 }
 
-bool pushButton::readState()
+bool pushButton::read()
 {
   return (bool)digitalRead(pushPin);
 

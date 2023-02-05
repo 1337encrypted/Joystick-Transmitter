@@ -1,5 +1,5 @@
-#ifndef joystick_h
-#define joystick_h
+#ifndef JOYSTICK_h
+#define JOYSTICK_h
 
 #if (ARDUINO >= 100)
   #include "Arduino.h"
@@ -49,7 +49,7 @@ uint16_t joystick::readY()
 bool joystick::readPushPin()
 {
   if(digitalRead(pushP))
-    retuen true;
+    return true;
   else
     return false;
 }

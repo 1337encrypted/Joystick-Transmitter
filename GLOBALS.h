@@ -2,19 +2,23 @@
 #include <nRF24L01.h>
 #include <RF24.h>                 //https://github.com/tmrh20/RF24/
 #include <Wire.h>
-#include <MPU6050.h>
+#include "BUZZER.h"
+#include "JOYSTICK.h"
+#include "PUSHBUTTON.h"
+#include "TOGGLESWITCH.h"
+//#include <MPU6050.h>
 
 //Toggle switch pins declaration and object
-#define tglpin1 6                 // Toggle switch 1
-#define tglpin2 7                 // Toggle switch 1
+#define tglPin1 6                 // Toggle switch 1
+#define tglPin2 7                 // Toggle switch 1
 toggleSwitch tgl1(tglPin1);
 toggleSwitch tgl2(tglPin2);
 
 //Potentiometer pins declaration and object
-#define potPin1 A6                // Toggle switch 1
-#define potPin2 A7                // Toggle switch 1
-potentiometer pot1(potPin1);
-potentiometer pot2(potPin2);
+// #define potPin1 A6                // Toggle switch 1
+// #define potPin2 A7                // Toggle switch 1
+// potentiometer pot1(potPin1);
+// potentiometer pot2(potPin2);
 
 //Joystick pin declaration and object declaration
 #define joyXaxisPin1 A0           // Joystick X axis 1
@@ -47,7 +51,7 @@ RF24 radio(CE,CSN);              // nRF24L01 (CE, CSN)
 const byte address[6] = "00001"; // Address
 
 //MPU6050
-MPU6050 mpu;
+// MPU6050 mpu;
 
 // Max size of this struct is 32 bytes - NRF24L01 buffer limit
 struct Data_Package 
@@ -58,15 +62,15 @@ struct Data_Package
   byte joy2Xaxis;
   byte joy2Yaxis;
   byte j2Button;
-  byte pot1val;
-  byte pot2val;
-  byte tSwitch1val;
-  byte tSwitch2val;
-  byte button1val;
-  byte button2val;
-  byte button3val;
-  byte button4val;
-  byte pitchval;
-  byte rollval;
+  // byte pot1val;
+  // byte pot2val;
+  byte tSwitch1Val;
+  byte tSwitch2Val;
+  byte button1Val;
+  byte button2Val;
+  byte button3Val;
+  byte button4Val;
+  // byte pitchVal;
+  // byte rollVal;
 };
 Data_Package data; //Create a variable with the above structure

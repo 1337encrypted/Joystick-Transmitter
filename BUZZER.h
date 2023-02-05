@@ -23,9 +23,9 @@ public:
 
 
 //Parametrized constructor
-buzzer::buzzer(uint8_t buzzpin)
+buzzer::buzzer(uint8_t buzzPin)
 {
-  this->buzzpin = buzzpin;
+  this->buzzPin = buzzPin;
 
   begin();
 }
