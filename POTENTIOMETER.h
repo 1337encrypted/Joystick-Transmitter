@@ -24,7 +24,6 @@ public:
 potentiometer::potentiometer(uint8_t potpin)
 {
     this->potPin = potPin;
-
     begin();
 }
 
